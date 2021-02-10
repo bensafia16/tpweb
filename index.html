@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tp html</title>
+	
+	<style>
+	
+	h1{
+	font-style:  italic;
+	background-color: rgb(0,0,0);
+	color: white;
+	margin: 15px;
+	width: 95%;
+	transition: 1s;
+}
+	 
+        h2 {
+            color: rgb(0, 232, 15);
+            font-size: 20px;
+        }  
+        
+        #mezia {
+        	color: rgb(0,0,0);
+            
+        }
+		#mezi{
+			color: rgb(0,0,0);
+            
+        }
+
+		#mez {
+            
+            color: rgb(0,0,0);
+            font-weight:  bolder;
+        }
+        
+        p {
+            color: rgb(0, 0, 0);
+            font-weight:  bold;
+        }
+
+		#AUTEUR {
+			padding: 20px;
+			font-size: 10px;
+            font-weight:  10;
+            background-color:rgb(145,145,145); 
+			color: #000;
+			margin: 5%;
+			height: 33px;
+			width: 85%;
+			transition: 1s;
+        }
+
+		.METEO{
+            display: flex;
+			flex-warp: warp;
+			margin: 5px;
+			width: 100%;
+			transition: 1s;
+			flex-direction: row;
+			box-sizing: border-box;
+		    height: 25%;
+        }
+
+		.METEO div {
+			width: 90000px;
+			color: white;
+            border: solid 1px #000 ;
+            background-color: rgb(145,145,145);
+            margin: 40px;
+
+        }
+		</style>
+
+</head>
+
+<body onload="showcity()">
+	 <h1><center>TP METEO HTML </center></h1>
+	 <label for="ville-select"><strong>choisir une ville S'il vous plait</strong></label>
+<select  name="ville" id="titi" onchange=showcity()>
+<option id="">---svp choisir une option---</option>
+<option id="LILLE">LILLE</option>
+<option id="LYON">LYON</option>
+<option id="PARIS">PARIS</option>
+</select>
+<script>
+function showcity(){
+
+let nomVilleSelectionnee=document.getElementById("titi").value;
+  let cities = document.getElementsByClassName("city");
+  let l= cities.length;
+  for(let i=0; i<l; i++){
+  cities[i].style.display= "none"
+  if(cities[i].id==nomVilleSelectionnee){
+  cities[i].style.display= "block";
+  }
+  else{
+  cities[i].style.display= " ";
+  }
+  }
+  }
+  
+  
+</script>
+
+
+
+
+
+	<div class="METEO">
+
+    <div id ="LILLE" class="city">
+    <h2 id="mezia">LILLE</h2>
+    <p> 5°, pluvieux</p>
+	<img src="meteo_lille.png" alt="photo"  width="100">
+    </div>
+	
+    <div id="LYON" class="city">
+	<h2 id ="mez">LYON</h2>
+    <p> -1°, ensoleille</p>
+	<img src="meteo_lyon.png" alt ="photo"  width="100">
+    </div>
+	
+    <div id="PARIS" class="city">
+    <h2 id ="mezi">PARIS</h2>
+    <p> 7°, orageux</p>
+	<img src="meteo_paris.png" alt="photo" width="100">
+	</div>
+	
+	</div>
+
+<footer>
+    <p id = "AUTEUR">Réaliser par:<strong>BENSAFIA MEZIANE p1812116/ SAMIR BENOUARET p2020552</strong> <br>Icones meteo par <a href="https://thenounproject.com/search/collection/?q=weather">Nook Fulloption</a>.  </p>
+    </footer>
+
+</body>
+</html>
